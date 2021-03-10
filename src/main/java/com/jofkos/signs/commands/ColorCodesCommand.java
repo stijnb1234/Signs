@@ -1,19 +1,13 @@
 package com.jofkos.signs.commands;
 
+import com.jofkos.signs.utils.Config;
 import org.apache.commons.lang.WordUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
-import com.jofkos.signs.Signs;
-import com.jofkos.signs.utils.Config;
-
 public class ColorCodesCommand implements CommandExecutor {
-	public static void load() {
-		Signs.getInstance().getCommand("colorcodes").setExecutor(new ColorCodesCommand());
-	}
-	
 	@Override
 	public boolean onCommand(CommandSender cs, Command cmd, String label, String[] args) {
 		

@@ -9,7 +9,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 import com.jofkos.signs.commands.ColorCodesCommand;
 import com.jofkos.signs.commands.EditCommand;
 import com.jofkos.signs.commands.ReloadCommand;
-import com.jofkos.signs.listeners.Listeners;
 import com.jofkos.signs.utils.API;
 import com.jofkos.signs.utils.Config;
 import com.jofkos.signs.utils.i18n.I18n;
@@ -28,12 +27,10 @@ public class Signs extends JavaPlugin {
 		Bukkit.getPluginManager().registerEvents(new EditListener(), this);
 		Bukkit.getPluginManager().registerEvents(new CopyListener(), this);
 		Bukkit.getPluginManager().registerEvents(new ColorListener(), this);
-		
-		Listeners.load();
-		
-		ReloadCommand.load();
-		ColorCodesCommand.load();
-		EditCommand.load();
+
+		getCommand("signs").setExecutor(new ReloadCommand());
+		getCommand("colorcodes").setExecutor(new ColorCodesCommand());
+		getCommand("edit").setExecutor(new EditCommand());
 		
 		this.saveConfig();
 	}

@@ -1,11 +1,10 @@
 package com.jofkos.signs.commands;
 
-import java.util.Set;
-
+import com.jofkos.signs.utils.API;
+import com.jofkos.signs.utils.i18n.I18n;
 import org.apache.commons.lang.ArrayUtils;
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.Bukkit;
-import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.Sign;
 import org.bukkit.command.Command;
@@ -14,15 +13,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.SignChangeEvent;
 
-import com.jofkos.signs.Signs;
-import com.jofkos.signs.utils.API;
-import com.jofkos.signs.utils.i18n.I18n;
-
 public class EditCommand implements CommandExecutor {
-	public static void load() {
-		Signs.getInstance().getCommand("edit").setExecutor(new EditCommand());
-	}
-	
 	@Override
 	public boolean onCommand(CommandSender cs, Command cmd, String label, String[] args) {
 		if (!(cs instanceof Player)) {

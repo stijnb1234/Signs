@@ -1,8 +1,8 @@
 name: Signs
 main: com.jofkos.signs.Signs
-version: 1.9.7
-author: Jofkos
-description: Simple sign editing.
+version: ${project.version}
+authors: [Jofkos, SBDeveloper]
+description: Simple and realistic sign editing!
 softdepend: [WorldGuard, Lockette]
 api-version: 1.16
 
